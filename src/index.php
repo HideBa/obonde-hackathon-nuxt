@@ -4,6 +4,6 @@
     <title>PHP Sample</title>
   </head>
   <body>
-    <?php echo gethostname(); ?>
+    <b>hackathon202108<b/>
   </body>
 </html>
