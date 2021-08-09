@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <title>PHP Sample sachiko</title>
+    <title>PHP Sample</title>
   </head>
   <body>
     <?php echo gethostname(); ?>
