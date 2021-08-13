@@ -1,4 +1,6 @@
-export default {
+import type { NuxtConfig } from "@nuxt/types";
+
+const config: NuxtConfig =  {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'obon-de-hackathon',
@@ -48,6 +50,15 @@ export default {
 
   // Set port number
   server: {
-    port: 8000 // デフォルト: 3000
-  }
+    port: 8000, // デフォルト: 3000
+    host: "0.0.0.0"
+  },
+
+  serverMiddleware: [
+    {
+      path: "/api", handler: "~/server-middleware/index.ts"
+    },
+  ]
 }
+
+export default config
