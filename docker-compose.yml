@@ -1,0 +1,26 @@
+version: '3'
+services:
+  nuxt:
+    build:
+      context: .
+      # args:
+    ports:
+      - '8080:8080'
+    # env_file:
+    #   - ./.env
+    environment:
+      NODE_ENV: docker
+      DB_URL: postgres://user:password@db/obon-hack
+    depends_on:
+      - db
+  db:
+    image: postgres
+    ports:
+      - '5432:5431'
+    environment:
+      POSTGRES_DB: obon-hack
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      PGDATA: /pgdata
+    volumes:
+      - ./pgdata:/pgdata
